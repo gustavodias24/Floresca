@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="#fcfbff"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="8dp"
+        tools:context=".IndexActivity">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            app:srcCompat="@drawable/logo2" />
+
+        <ImageButton
+            android:id="@+id/respiracao"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/exrespiracao" />
+
+        <ImageButton
+            android:id="@+id/relaxamento"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/exrelaxamento" />
+
+        <ImageButton
+            android:id="@+id/sons"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/exsons" />
+
+        <ImageButton
+            android:id="@+id/historias"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/exhistorias" />
+
+        <ImageButton
+            android:id="@+id/compeenda"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/excompreenda" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mensagem do dia"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="&quot;Hoje é um novo dia para sorrir, para amar, para viver plenamente.&quot; "
+            android:textColor="#000000" />
+
+        <ImageButton
+            android:id="@+id/saiba_mais"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#00FFFFFF"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/saibamais" />
+
+    </LinearLayout>
+</ScrollView>

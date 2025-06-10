@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/branco_laranja"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="8dp"
+        tools:context=".IndexActivity">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            app:srcCompat="@drawable/logo2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/laranja"
+            android:gravity="center"
+            android:text="Jardim de Bem-Estar"
+            android:textColor="#352236"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/laranja"
+            android:gravity="center"
+            android:text="Aqui florescem seus\npequenos passos de cuidado."
+            android:textColor="#352236"
+            android:textSize="24sp"
+             />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/flores" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/laranja"
+            android:gravity="center"
+            android:text="Você já cultivou 6 de 10 momentos\nde bem-estar nesta semana"
+            android:textColor="#352236"
+            android:textSize="24sp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:max="10"
+            android:maxHeight="20dp"
+            android:minHeight="26dip"
+            android:progress="6"
+            android:progressBackgroundTint="#FF0000"
+            android:progressTint="@color/laranja" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/laranja"
+            android:text="explorar mais cuidados"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

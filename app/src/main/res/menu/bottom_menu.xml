@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/inicio"
+        android:title=""/>
+
+    <item
+        android:id="@+id/nav_exercicio"
+        android:icon="@drawable/exercicios"
+        android:title=""/>
+
+    <item
+        android:id="@+id/nav_sons"
+        android:icon="@drawable/sons"
+        android:title=""/>
+
+    <item
+        android:id="@+id/nav_sair"
+        android:icon="@drawable/sair"
+        android:title=""/>
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/perfilsmall"
+        android:title=""/>
+
+</menu>
