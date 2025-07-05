@@ -16,9 +16,9 @@ public class FragmentExercicio extends Fragment {
 
     }
     Fragment fragmentSons = new FragmentSons();
-    Fragment fragmentHistorias = new FragmentHistoriasNarradas();
+    Fragment fragmentHistorias = new FragmentEscolherHistorias();
     Fragment fragmentRelaxamento = new FragmentExercicioRelaxamento();
-    Fragment fragmentRespiracao = new FragmentRespiracao();
+//    Fragment fragmentRespiracao = new FragmentRespiracao();
     Fragment fragmentCompreenda = new FragmentCompreenda();
     Fragment fragmentSaibaMais = new FragmentHome();
     FragmentExerciciosBinding mainbingind;
@@ -41,9 +41,9 @@ public class FragmentExercicio extends Fragment {
         mainbingind.relaxamento.setOnClickListener(v -> {
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentRelaxamento).commit();
         });
-        mainbingind.respiracao.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentRespiracao).commit();
-        });
+//        mainbingind.respiracao.setOnClickListener(v -> {
+//            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentRespiracao).commit();
+//        });
 
         mainbingind.saibaMais.setOnClickListener(v -> {
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentSaibaMais).commit();

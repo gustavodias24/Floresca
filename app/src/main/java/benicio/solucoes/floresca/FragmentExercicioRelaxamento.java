@@ -9,14 +9,25 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import benicio.solucoes.floresca.databinding.FragmentExercicioRelaxamentoBinding;
+
 public class FragmentExercicioRelaxamento extends Fragment {
-    public FragmentExercicioRelaxamento (){}
+    public FragmentExercicioRelaxamento() {
+    }
+
+    public FragmentExercicioRelaxamentoBinding mainBinding;
+    Fragment fragmentRelaxamento = new FragmentEscolherTempoRelaxamento();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_exercicio_relaxamento, container, false);
+        mainBinding = FragmentExercicioRelaxamentoBinding.inflate(getLayoutInflater());
+
+        mainBinding.iniciar.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentRelaxamento).commit())
+        ;
+
+        return mainBinding.getRoot();
     }
 }

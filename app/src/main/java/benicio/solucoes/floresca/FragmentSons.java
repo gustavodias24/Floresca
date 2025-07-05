@@ -9,17 +9,28 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import benicio.solucoes.floresca.databinding.FragementSonsBinding;
+
 public class FragmentSons extends Fragment {
 
-    public FragmentSons(){
+    public FragmentSons() {
 
     }
+
+    FragementSonsBinding mainBinding;
+    Fragment fragmentSons = new FragmentEscolherSons();
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragement_sons, container, false);
+        mainBinding = FragementSonsBinding.inflate(getLayoutInflater());
+
+        mainBinding.iniciar.setOnClickListener(v ->
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentSons).commit());
+
+        return mainBinding.getRoot();
     }
 }

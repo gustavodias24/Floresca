@@ -14,17 +14,21 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import benicio.solucoes.floresca.databinding.ActivityInicioBinding;
 import benicio.solucoes.floresca.databinding.ActivityLoginBinding;
+import benicio.solucoes.floresca.utils.MensagemDoDiaUtil;
 
 public class InicioActivity extends AppCompatActivity {
 
     ActivityInicioBinding mainBinding;
-
     BottomNavigationView bottomNavigationView;
-
-    Fragment fragmentHome = new FragmentHome();
-    Fragment fragmentExcercicio = new FragmentExercicio();
+    Fragment fragmentHome = new FragmentExercicio();
+//    Fragment fragmentExcercicio = new FragmentExercicio();
     Fragment fragmentSons = new FragmentSons();
     Fragment fragmentProfile = new FragmentPerfil();
+    Fragment fragmentDicas = new FragmentDicas();
+    Fragment fragmentJardin = new FragmentJardin();
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +45,25 @@ public class InicioActivity extends AppCompatActivity {
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.nav_home) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentHome).commit();
-            } else if (item.getItemId() == R.id.nav_exercicio) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentExcercicio).commit();
+            } else if (item.getItemId() == R.id.nav_dicas) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentDicas).commit();
             } else if (item.getItemId() == R.id.nav_sair) {
                 finish();
-            } else if (item.getItemId() == R.id.nav_sons) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentSons).commit();
+            } else if (item.getItemId() == R.id.nav_jardim) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentJardin).commit();
             } else if (item.getItemId() == R.id.nav_profile) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentProfile).commit();
             }
+//            else if ( item.getItemId() == R.id.nav_dicas){
+//                getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentDicas).commit();
+//            }
             return false;
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        MensagemDoDiaUtil.mostrarMensagemDoDia(this);
     }
 }

@@ -9,14 +9,23 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import benicio.solucoes.floresca.databinding.FragmentJardinBinding;
+
 public class FragmentJardin extends Fragment {
     public FragmentJardin(){}
+
+    FragmentJardinBinding mainBinding;
+    Fragment fragmentDicas = new FragmentAbrirDicas();
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_jardin, container, false);
+        mainBinding = FragmentJardinBinding.inflate(getLayoutInflater());
+
+        mainBinding.explorar.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container,fragmentDicas).commit());
+
+        return mainBinding.getRoot();
     }
 }

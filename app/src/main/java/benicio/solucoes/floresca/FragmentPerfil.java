@@ -14,7 +14,8 @@ import benicio.solucoes.floresca.databinding.FragmentPerfilBinding;
 
 public class FragmentPerfil extends Fragment {
 
-    public FragmentPerfil(){}
+    public FragmentPerfil() {
+    }
 
     FragmentPerfilBinding mainBinding;
 

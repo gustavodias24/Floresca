@@ -64,17 +64,16 @@
             android:id="@+id/progressBar2"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="26dp"
             android:layout_marginBottom="8dp"
             android:max="10"
-            android:maxHeight="20dp"
-            android:minHeight="26dip"
             android:progress="6"
-            android:progressBackgroundTint="#FF0000"
-            android:progressTint="@color/laranja" />
+            android:progressDrawable="@drawable/progress_bar_custom"
+            android:layout_marginTop="8dp"
+            />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/explorar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/laranja"

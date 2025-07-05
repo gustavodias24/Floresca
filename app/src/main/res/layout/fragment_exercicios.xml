@@ -25,14 +25,6 @@
             app:srcCompat="@drawable/logo2" />
 
         <ImageButton
-            android:id="@+id/respiracao"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:backgroundTint="#00FFFFFF"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/exrespiracao" />
-
-        <ImageButton
             android:id="@+id/relaxamento"
             android:layout_width="300dp"
             android:layout_height="80dp"

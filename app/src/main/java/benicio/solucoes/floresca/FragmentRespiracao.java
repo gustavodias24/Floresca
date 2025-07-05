@@ -16,6 +16,7 @@ import benicio.solucoes.floresca.databinding.FragmentPerfilBinding;
 public class FragmentRespiracao extends Fragment {
     public FragmentRespiracao(){}
 
+    Fragment fragmentRespiracao = new FragmentEscolherTempoRespiracao();
     FragmentExercicioRespiracaoBinding mainBinding;
     @Nullable
     @Override
@@ -24,6 +25,12 @@ public class FragmentRespiracao extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         mainBinding = FragmentExercicioRespiracaoBinding.inflate(getLayoutInflater());
+
+        mainBinding.iniciar.setOnClickListener(v -> {
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentRespiracao).commit();
+        });
+
+
         return mainBinding.getRoot();
     }
 }

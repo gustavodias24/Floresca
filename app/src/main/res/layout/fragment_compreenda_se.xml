@@ -41,6 +41,7 @@
             app:srcCompat="@drawable/livro" />
 
         <TextView
+            android:id="@+id/titulo_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
@@ -51,6 +52,16 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/texto_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/titulo_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
@@ -61,6 +72,16 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/texto_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/titulo_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
@@ -71,6 +92,16 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/texto_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/titulo_4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
@@ -80,8 +111,18 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/texto_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:visibility="gone" />
+
 
         <TextView
+            android:id="@+id/titulo_5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
@@ -90,6 +131,15 @@
             android:textColor="@color/roxo_escuro"
             android:textSize="16sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/texto_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="TextView"
+            android:textColor="#000000"
+            android:visibility="gone" />
 
     </LinearLayout>
 </ScrollView>

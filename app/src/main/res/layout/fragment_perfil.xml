@@ -58,6 +58,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="conteúdos acessados."
+            android:textColor="@color/roxo_escuro" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Você acessou Sons 4 vezes essa semana."
             android:textColor="@color/roxo_escuro"
             android:textStyle="bold" />
@@ -72,7 +80,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Você acessou Exercpicios 9 vezes essa semana."
+            android:text="Você acessou exercício 9 vezes essa semana."
             android:textColor="@color/roxo_escuro"
             android:layout_marginTop="8dp"
             android:textStyle="bold" />
@@ -101,7 +109,7 @@
             android:text="Preferências de notificações"
             android:textColor="@color/roxo_escuro" />
 
-        <EditText
+        <TextView
             android:id="@+id/editTextTextEmailAddress2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
