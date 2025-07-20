@@ -32,12 +32,12 @@
             android:gravity="center"
             android:text="Compreenda\na si mesma"
             android:textColor="#352236"
-            android:textSize="34sp" />
+            android:textSize="24sp" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="180dp"
             app:srcCompat="@drawable/livro" />
 
         <TextView
@@ -48,7 +48,7 @@
             android:gravity="center"
             android:text="O que é ansiedade?"
             android:textColor="@color/roxo_escuro"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <TextView
@@ -58,6 +58,7 @@
             android:gravity="center"
             android:text="TextView"
             android:textColor="#000000"
+            android:textSize="12sp"
             android:visibility="gone" />
 
         <TextView
@@ -68,7 +69,7 @@
             android:gravity="center"
             android:text="O que é despressão?"
             android:textColor="@color/roxo_escuro"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <TextView
@@ -78,6 +79,7 @@
             android:gravity="center"
             android:text="TextView"
             android:textColor="#000000"
+            android:textSize="12sp"
             android:visibility="gone" />
 
         <TextView
@@ -88,7 +90,7 @@
             android:gravity="center"
             android:text="Como lidar com estresse?"
             android:textColor="@color/roxo_escuro"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <TextView
@@ -98,6 +100,7 @@
             android:gravity="center"
             android:text="TextView"
             android:textColor="#000000"
+            android:textSize="12sp"
             android:visibility="gone" />
 
         <TextView
@@ -108,7 +111,7 @@
             android:gravity="center"
             android:text="Confie em si mesma."
             android:textColor="@color/roxo_escuro"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <TextView
@@ -118,6 +121,7 @@
             android:gravity="center"
             android:text="TextView"
             android:textColor="#000000"
+            android:textSize="12sp"
             android:visibility="gone" />
 
 
@@ -129,16 +133,18 @@
             android:gravity="center"
             android:text="Construa hábitos saudáveis"
             android:textColor="@color/roxo_escuro"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/texto_5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
             android:gravity="center"
             android:text="TextView"
             android:textColor="#000000"
+            android:textSize="12sp"
             android:visibility="gone" />
 
     </LinearLayout>

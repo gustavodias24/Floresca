@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import benicio.solucoes.floresca.databinding.FragmentEscolherSonsBinding;
 import benicio.solucoes.floresca.databinding.FragmentEscolherTempoRelaxamentoBinding;
 
 public class FragmentEscolherTempoRelaxamento extends Fragment {
@@ -20,6 +19,7 @@ public class FragmentEscolherTempoRelaxamento extends Fragment {
 
     FragmentEscolherTempoRelaxamentoBinding mainBinding;
     private MediaPlayer mediaPlayer;
+    private int somAtual = -1; // Guarda o id do som que está tocando
 
     @Nullable
     @Override
@@ -33,19 +33,38 @@ public class FragmentEscolherTempoRelaxamento extends Fragment {
         mainBinding.livre.setOnClickListener(v -> tocar_som(R.raw.dez_livre_ansiedade));
         mainBinding.cura.setOnClickListener(v -> tocar_som(R.raw.cinco_cura_em_voce));
 
-
         return mainBinding.getRoot();
     }
 
     void tocar_som(int som) {
-
-        Toast.makeText(getActivity(), "Iniciando Som...", Toast.LENGTH_SHORT).show();
-
-        if (mediaPlayer != null) {
+        // Se já está tocando o mesmo som, para ele e reseta
+        if (mediaPlayer != null && mediaPlayer.isPlaying() && somAtual == som) {
+            mediaPlayer.stop();
             mediaPlayer.release();
+            mediaPlayer = null;
+            somAtual = -1;
+            Toast.makeText(getActivity(), "Som desligado!", Toast.LENGTH_SHORT).show();
+            return;
         }
 
+        // Se estava tocando outro som, para ele
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+
+        // Toca o novo som
         mediaPlayer = MediaPlayer.create(getActivity(), som);
         mediaPlayer.start();
+        somAtual = som;
+        Toast.makeText(getActivity(), "Iniciando Som...", Toast.LENGTH_SHORT).show();
+
+        // Libera o MediaPlayer quando o som termina (boa prática)
+        mediaPlayer.setOnCompletionListener(mp -> {
+            mediaPlayer.release();
+            mediaPlayer = null;
+            somAtual = -1;
+        });
     }
 }

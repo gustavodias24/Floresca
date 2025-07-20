@@ -56,22 +56,6 @@
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/excompreenda" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Mensagem do dia"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="&quot;Hoje é um novo dia para sorrir, para amar, para viver plenamente.&quot; "
-            android:textColor="#000000" />
-
         <ImageButton
             android:id="@+id/saiba_mais"
             android:layout_width="300dp"

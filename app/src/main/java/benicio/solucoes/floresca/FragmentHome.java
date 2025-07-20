@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -104,45 +105,45 @@ public class FragmentHome extends Fragment {
     }
 
     void exibirTexto(int tipo) {
-        mainBinding.texto1.setVisibility(View.GONE);
-        mainBinding.texto2.setVisibility(View.GONE);
-        mainBinding.texto3.setVisibility(View.GONE);
-        mainBinding.texto4.setVisibility(View.GONE);
-        mainBinding.texto5.setVisibility(View.GONE);
+        // Array com todas as TextViews para facilitar o controle
+        TextView[] textos = {
+                mainBinding.texto1,
+                mainBinding.texto2,
+                mainBinding.texto3,
+                mainBinding.texto4,
+                mainBinding.texto5
+        };
 
-        if (tipo == 1) {
-            mainBinding.texto1.setText(Html.fromHtml(texto1.replace("\n", "<br>")));
-            Linkify.addLinks(mainBinding.texto1, Linkify.WEB_URLS);
-            mainBinding.texto1.setMovementMethod(LinkMovementMethod.getInstance());
-            mainBinding.texto1.setVisibility(View.VISIBLE);
+        // Descobre qual TextView corresponde ao tipo (1 a 5)
+        int index = tipo - 1;
+        if (index < 0 || index >= textos.length) return; // Parâmetro fora do esperado
+
+        TextView textoSelecionado = textos[index];
+
+        // Se já está visível, some e sai
+        if (textoSelecionado.getVisibility() == View.VISIBLE) {
+            textoSelecionado.setVisibility(View.GONE);
+            return;
         }
 
-        if (tipo == 2) {
-            mainBinding.texto2.setText(Html.fromHtml(texto2.replace("\n", "<br>")));
-            Linkify.addLinks(mainBinding.texto2, Linkify.WEB_URLS);
-            mainBinding.texto2.setMovementMethod(LinkMovementMethod.getInstance());
-            mainBinding.texto2.setVisibility(View.VISIBLE);
+        // Esconde todos
+        for (TextView t : textos) {
+            t.setVisibility(View.GONE);
         }
 
-        if (tipo == 3) {
-            mainBinding.texto3.setText(Html.fromHtml(texto3.replace("\n", "<br>")));
-            Linkify.addLinks(mainBinding.texto3, Linkify.WEB_URLS);
-            mainBinding.texto3.setMovementMethod(LinkMovementMethod.getInstance());
-            mainBinding.texto3.setVisibility(View.VISIBLE);
+        // Define o texto correto e exibe o que foi pedido
+        String texto = "";
+        switch (tipo) {
+            case 1: texto = texto1; break;
+            case 2: texto = texto2; break;
+            case 3: texto = texto3; break;
+            case 4: texto = texto4; break;
+            case 5: texto = texto5; break;
         }
 
-        if (tipo == 4) {
-            mainBinding.texto4.setText(Html.fromHtml(texto4.replace("\n", "<br>")));
-            Linkify.addLinks(mainBinding.texto4, Linkify.WEB_URLS);
-            mainBinding.texto4.setMovementMethod(LinkMovementMethod.getInstance());
-            mainBinding.texto4.setVisibility(View.VISIBLE);
-        }
-
-        if (tipo == 5) {
-            mainBinding.texto5.setText(Html.fromHtml(texto5.replace("\n", "<br>")));
-            Linkify.addLinks(mainBinding.texto5, Linkify.WEB_URLS);
-            mainBinding.texto5.setMovementMethod(LinkMovementMethod.getInstance());
-            mainBinding.texto5.setVisibility(View.VISIBLE);
-        }
+        textoSelecionado.setText(Html.fromHtml(texto.replace("\n", "<br>")));
+        Linkify.addLinks(textoSelecionado, Linkify.WEB_URLS);
+        textoSelecionado.setMovementMethod(LinkMovementMethod.getInstance());
+        textoSelecionado.setVisibility(View.VISIBLE);
     }
 }

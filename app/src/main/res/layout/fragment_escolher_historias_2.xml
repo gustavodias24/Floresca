@@ -47,6 +47,7 @@
                 app:srcCompat="@drawable/japones" />
 
             <TextView
+                android:id="@+id/japones"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -73,6 +74,7 @@
                 app:srcCompat="@drawable/arabe" />
 
             <TextView
+                android:id="@+id/arabe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

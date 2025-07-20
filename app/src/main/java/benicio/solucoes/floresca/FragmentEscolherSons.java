@@ -22,6 +22,8 @@ public class FragmentEscolherSons extends Fragment {
     FragmentEscolherSonsBinding mainBinding;
     private MediaPlayer mediaPlayer;
 
+    private int somAtual = -1;
+
 
     @Nullable
     @Override
@@ -41,15 +43,34 @@ public class FragmentEscolherSons extends Fragment {
     }
 
     void tocar_som(int som) {
-
-        Toast.makeText(getActivity(), "Iniciando Som...", Toast.LENGTH_SHORT).show();
-
-        if (mediaPlayer != null) {
+        // Se já está tocando o mesmo som, para e reseta
+        if (mediaPlayer != null && mediaPlayer.isPlaying() && somAtual == som) {
+            mediaPlayer.stop();
             mediaPlayer.release();
+            mediaPlayer = null;
+            somAtual = -1;
+            Toast.makeText(getActivity(), "Som desligado!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Se estava tocando outro som, para ele
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+            mediaPlayer = null;
         }
 
         mediaPlayer = MediaPlayer.create(getActivity(), som);
         mediaPlayer.start();
+        somAtual = som;
+        Toast.makeText(getActivity(), "Iniciando Som...", Toast.LENGTH_SHORT).show();
+
+        // Libera o player ao terminar (boa prática)
+        mediaPlayer.setOnCompletionListener(mp -> {
+            mediaPlayer.release();
+            mediaPlayer = null;
+            somAtual = -1;
+        });
     }
 
 
