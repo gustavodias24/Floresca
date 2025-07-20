@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import benicio.solucoes.floresca.databinding.FragmentEscolherTempoRelaxamentoBinding;
+import benicio.solucoes.floresca.service.WeeklyScreenTracker;
 
 public class FragmentEscolherTempoRelaxamento extends Fragment {
 
@@ -32,6 +33,10 @@ public class FragmentEscolherTempoRelaxamento extends Fragment {
         mainBinding.autoestima.setOnClickListener(v -> tocar_som(R.raw.cinco_autoestima_amor));
         mainBinding.livre.setOnClickListener(v -> tocar_som(R.raw.dez_livre_ansiedade));
         mainBinding.cura.setOnClickListener(v -> tocar_som(R.raw.cinco_cura_em_voce));
+
+
+        WeeklyScreenTracker tracker = new WeeklyScreenTracker(getActivity());
+        tracker.incrementScreenCount("relaxamento");
 
         return mainBinding.getRoot();
     }

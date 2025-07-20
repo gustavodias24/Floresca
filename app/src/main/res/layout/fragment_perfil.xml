@@ -30,15 +30,15 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/perfil" />
 
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/laranja"
-            android:gravity="center"
-            android:text="Nome"
-            android:textColor="#352236"
-            android:textSize="34sp" />
+<!--        <TextView-->
+<!--            android:id="@+id/name"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:backgroundTint="@color/laranja"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Nome"-->
+<!--            android:textColor="#352236"-->
+<!--            android:textSize="34sp" />-->
 
         <View
             android:id="@+id/divider"
@@ -64,6 +64,7 @@
             android:textColor="@color/roxo_escuro" />
 
         <TextView
+            android:id="@+id/sons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Você acessou Sons 4 vezes essa semana."
@@ -71,13 +72,15 @@
             android:textStyle="bold" />
 
         <ProgressBar
+            android:id="@+id/progresssons"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:progress="30"
+            android:max="7"
             android:progressTint="@color/roxo_escuro" />
 
         <TextView
+            android:id="@+id/relaxamento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Você acessou exercício 9 vezes essa semana."
@@ -86,11 +89,11 @@
             android:textStyle="bold" />
 
         <ProgressBar
-            android:id="@+id/progressBar"
+            android:id="@+id/progressrelaxamento"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:progress="80"
+            android:max="7"
             android:progressTint="@color/roxo_escuro" />
 
         <View

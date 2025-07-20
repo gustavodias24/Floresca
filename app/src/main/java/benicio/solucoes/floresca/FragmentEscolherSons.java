@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import benicio.solucoes.floresca.databinding.FragmentEscolherSonsBinding;
+import benicio.solucoes.floresca.service.WeeklyScreenTracker;
 
 public class FragmentEscolherSons extends Fragment {
 
@@ -36,6 +37,9 @@ public class FragmentEscolherSons extends Fragment {
         mainBinding.somMar.setOnClickListener(v -> tocar_som(R.raw.dez_som_mar));
         mainBinding.somPassarinho.setOnClickListener(v -> tocar_som(R.raw.dez_som_passaro));
         mainBinding.somSino.setOnClickListener(v -> tocar_som(R.raw.quinze_som_sino));
+
+        WeeklyScreenTracker tracker = new WeeklyScreenTracker(getActivity());
+        tracker.incrementScreenCount("sons");
 
         return mainBinding.getRoot();
 
