@@ -31,7 +31,7 @@
             android:layout_gravity="center"
             android:backgroundTint="@color/laranja"
             android:gravity="center"
-            android:text="Exercício de\n relaxamento"
+            android:text="Exercícios de\n relaxamento"
             android:textColor="#352236"
             android:textSize="34sp" />
 

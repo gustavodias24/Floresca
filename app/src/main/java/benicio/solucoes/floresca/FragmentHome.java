@@ -18,7 +18,23 @@ import benicio.solucoes.floresca.databinding.FragmentHomeBinding;
 
 public class FragmentHome extends Fragment {
 
-    String texto1 = "Secretaria de cultura em Niterói - https://www.culturaniteroi.com.br/Secretaria Municipal de esporte e Lazer de Niterói-  http://esporte.niteroi.rj.gov.br/";
+    String texto1 = "1.\tAgenda cultural de eventos da prefeitura de Niterói.\n" +
+            "Informações: https://www.culturaniteroi.com.br/\n" +
+            "\n" +
+            "\n" +
+            "2.\tSEPE - Sindicato Estadual dos profissionais da educação do estado do Rio de Janeiro\n" +
+            "Aulas de dança e teatro\n" +
+            "Informações:  https://www.instagram.com/sepeniteroi/\n" +
+            "      \n" +
+            "3.\tCentro de artes e esportes Jurujuba- Prefeitura de Niterói\n" +
+            "Projeto Social totalmente gratuito com Ações Esportivas, Educacionais e Culturais. \n" +
+            "Projeto social gratuito com Ações esportivas, educacionais e culturais.\n" +
+            "Informações: https://www.instagram.com/ceujurujuba/?hl=pt\n" +
+            "\n" +
+            "\n" +
+            "4.\tAgenda de eventos e atividades de esporte e lazer gratuitos abertos ao público: academia natural, capoeira inclusiva, yoga, campeonatos, passeios, entre outros.\n" +
+            "Espaço de divulgação de atividades esportivas para a promoção da  saúde e do bem-estar realizadas pela Secretaria de esporte e lazer de Niterói.\n" +
+            "Informações: https://www.instagram.com/esporteelazerniteroi/\n";
     String texto2 = "Agenda cultural de eventos da prefeitura de Niterói.\n" +
             "Informações: https://www.culturaniteroi.com.br/\n" +
             "\n" +
@@ -40,22 +56,21 @@ public class FragmentHome extends Fragment {
             "Agenda de eventos e atividades de esporte e lazer gratuitos abertos ao público: academia natural, capoeira inclusiva, yoga, campeonatos, passeios, entre outros.\n" +
             "Espaço de divulgação de atividades esportivas para a promoção da  saúde e do bem-estar realizadas pela Secretaria de esporte e lazer de Niterói.\n" +
             "Informações: https://www.instagram.com/esporteelazerniteroi/\n";
-    String texto3 = "Práticas integrativas e complementares em saúde\n" +
+    String texto3 = "1.\tPráticas integrativas e complementares em saúde\n" +
             "Divulgação de informações de evidências científicas sobre práticas integrativas complementares em saúde.\n" +
             "Faculdade de Farmácia da UFF\n" +
             "Informações: https://www.instagram.com/uffpics/\n";
-    String texto4 = "Serviço de Psicologia Aplicada da UFF\n" +
+    String texto4 = "1.\tServiço de Psicologia Aplicada da UFF\n" +
             "Informações podem ser solicitadas ao SPA pelo e-mail: spa.ips@id.uff.br\n" +
             "\n" +
-            "AASM - Ambulatórios Ampliados de Saúde Mental\n" +
-            "Atendimento para pessoas com quadros moderados de sofrimento psíquico.\n" +
-            "Locais: Policlínicas regionais de Niterói\n" +
+            "2.\tAASM - Ambulatórios Ampliados de Saúde Mental\n" +
+            "Atendimento para pessoas com quadros moderados de sofrimento psíquico.\nLocais: Policlínicas regionais de Niterói\n" +
             "Informações: https://saude.niteroi.rj.gov.br/policlinicas/\n" +
             "\n" +
-            "CODIM  -coordenadoria de Políticas e Direitos Humanos das Mulheres\n" +
+            "3.\tCODIM  -coordenadoria de Políticas e Direitos Humanos das Mulheres\n" +
             "Atendimento psicológico para o fortalecimento da autoestima de mulheres, bem como rompimento das situações de violência.\n" +
             "Informações: (21)96992-6557- http://codim.niteroi.rj.gov.br/\n";
-    String texto5 = "Menos dor + saúde\n" +
+    String texto5 = "1.\tMenos dor + saúde\n" +
             "Grupo terapêutico para manejo da dor\n" +
             "Tratamento com acupuntura\n" +
             "Local: Unidade de saúde  - Clínica da família - Fonseca/Niterói/RJ\n" +
@@ -67,19 +82,21 @@ public class FragmentHome extends Fragment {
             "   Informações: https://www.instagram.com/projeto_saudetodos/\n" +
             "\n" +
             "\n" +
-            "DANÇA na UFF\n" +
+            "5.\tDANÇA na UFF\n" +
             "Movimento espontâneo, gratuito de aulas de dança aberto ao público.\n" +
             "Não é necessário inscrição.\n" +
             "Informações: https://www.instagram.com/danca.uff/\n" +
             "\n" +
-            "YOGA NA UFF\n" +
+            "6.\tYOGA NA UFF\n" +
             "Estratégia para a promoção da saúde mental, destinado a qualquer membro da comunidade.\n" +
             "Informações: https://www.instagram.com/yoganauff/?hl=pt\n" +
             "\n" +
-            "Mulheres que caminham\n" +
+            "7.\tMulheres que caminham\n" +
             "Movimento feminino gratuito para proporcionar esporte, saúde e beleza para as mulheres de Niterói.\n" +
-            "Informações: @https://www.instagram.com/mulheres_quecaminham/\n" +
-            "\n";
+            "Informações: https://www.instagram.com/mulheres_quecaminham/\n" +
+            "\n" +
+            "8.\tPráticas integrativas de saúde gratuitas oferecidas pelo Sistema Único de Saúde (SUS)- Policlínicas\n" +
+            "Informações: https://saude.niteroi.rj.gov.br/policlinicas/\n";
 
 
     public FragmentHome() {

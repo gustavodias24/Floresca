@@ -47,7 +47,7 @@
             android:gravity="center"
             android:text="Cultura e lazer"
             android:textColor="@color/roxo_escuro"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/texto_1"
@@ -56,6 +56,7 @@
             android:gravity="center"
             android:text="TextView"
             android:textColor="#000000"
+            android:textSize="12sp"
             android:visibility="gone" />
 
 
@@ -67,7 +68,8 @@
             android:gravity="center"
             android:text="Práticas integrativas e complementares em Saúde"
             android:textColor="@color/roxo_escuro"
-            android:textSize="20sp" />
+            android:textSize="12sp"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/texto_2"
@@ -76,6 +78,7 @@
             android:gravity="center"
             android:text="TextView"
             android:textColor="#000000"
+            android:textSize="12sp"
             android:visibility="gone" />
 
         <TextView
@@ -86,7 +89,7 @@
             android:gravity="center"
             android:text="Grupos de estudos sobre saúde e bem-estar"
             android:textColor="@color/roxo_escuro"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/texto_3"
@@ -95,6 +98,7 @@
             android:gravity="center"
             android:text="TextView"
             android:textColor="#000000"
+            android:textSize="12sp"
             android:visibility="gone" />
 
         <TextView
@@ -105,7 +109,7 @@
             android:gravity="center"
             android:text="Atendimento psicológico"
             android:textColor="@color/roxo_escuro"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/texto_4"
@@ -114,6 +118,7 @@
             android:gravity="center"
             android:text="TextView"
             android:textColor="#000000"
+            android:textSize="12sp"
             android:visibility="gone" />
 
         <TextView
@@ -124,16 +129,17 @@
             android:gravity="center"
             android:text="Convênios e parcerias"
             android:textColor="@color/roxo_escuro"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/texto_5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="64dp"
+            android:layout_marginBottom="128dp"
             android:gravity="center"
             android:text="TextView"
             android:textColor="#000000"
+            android:textSize="12sp"
             android:visibility="gone" />
 
     </LinearLayout>
