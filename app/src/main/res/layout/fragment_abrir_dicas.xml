@@ -32,14 +32,13 @@
 
         <ImageButton
             android:id="@+id/voltar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
             android:background="@drawable/rounded_back"
             android:scaleType="fitCenter"
             android:tint="#050505"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/voltaricon" />
 
 

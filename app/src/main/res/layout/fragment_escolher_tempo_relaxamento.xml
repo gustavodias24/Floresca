@@ -17,11 +17,11 @@
         android:padding="8dp"
         tools:context=".IndexActivity">
 
-
         <ImageButton
             android:id="@+id/voltar1"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_gravity="start"
             android:background="@drawable/rounded_back"
             android:scaleType="fitCenter"
             android:tint="#050505"
@@ -74,12 +74,16 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/btn_autoconfianca"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="COMEÇAR ÁUDIO" />
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_botao_audio_redondo"
+                    android:contentDescription="Tocar ou pausar áudio de autoconfiança"
+                    android:padding="14dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/play" />
             </LinearLayout>
         </LinearLayout>
 
@@ -111,12 +115,16 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/btn_autoestima"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="COMEÇAR ÁUDIO" />
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_botao_audio_redondo"
+                    android:contentDescription="Tocar ou pausar áudio de autoestima"
+                    android:padding="14dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/play" />
             </LinearLayout>
         </LinearLayout>
 
@@ -148,12 +156,16 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/btn_livre"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="COMEÇAR ÁUDIO" />
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_botao_audio_redondo"
+                    android:contentDescription="Tocar ou pausar áudio livre da ansiedade"
+                    android:padding="14dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/play" />
             </LinearLayout>
         </LinearLayout>
 
@@ -185,12 +197,16 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/btn_cura"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="COMEÇAR ÁUDIO" />
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_botao_audio_redondo"
+                    android:contentDescription="Tocar ou pausar áudio a cura está em você"
+                    android:padding="14dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/play" />
             </LinearLayout>
         </LinearLayout>
 

@@ -19,13 +19,13 @@
 
         <ImageButton
             android:id="@+id/voltar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_gravity="start"
             android:background="@drawable/rounded_back"
             android:scaleType="fitCenter"
             android:tint="#050505"
             app:srcCompat="@drawable/voltaricon" />
-
 
         <ImageView
             android:id="@+id/imageView"
@@ -64,12 +64,17 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/btn_som_mar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="COMEÇAR ÁUDIO" />
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_botao_audio_redondo"
+                    android:contentDescription="Tocar ou pausar áudio do mar"
+                    android:padding="14dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/play" />
             </LinearLayout>
 
             <LinearLayout
@@ -96,12 +101,17 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/btn_som_passarinho"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="COMEÇAR ÁUDIO" />
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_botao_audio_redondo"
+                    android:contentDescription="Tocar ou pausar áudio de passarinhos"
+                    android:padding="14dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/play" />
             </LinearLayout>
 
         </LinearLayout>
@@ -136,12 +146,17 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/btn_som_chuva"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="COMEÇAR ÁUDIO" />
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_botao_audio_redondo"
+                    android:contentDescription="Tocar ou pausar áudio de chuva"
+                    android:padding="14dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/play" />
             </LinearLayout>
 
             <LinearLayout
@@ -168,12 +183,17 @@
                     android:textSize="14sp"
                     android:textStyle="bold" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/btn_som_sino"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="COMEÇAR ÁUDIO" />
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_botao_audio_redondo"
+                    android:contentDescription="Tocar ou pausar áudio de sino"
+                    android:padding="14dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/play" />
             </LinearLayout>
 
         </LinearLayout>

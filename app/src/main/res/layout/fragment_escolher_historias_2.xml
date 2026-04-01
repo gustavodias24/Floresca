@@ -19,13 +19,13 @@
 
         <ImageButton
             android:id="@+id/voltar"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_gravity="start"
             android:background="@drawable/rounded_back"
             android:scaleType="fitCenter"
             android:tint="#050505"
             app:srcCompat="@drawable/voltaricon" />
-
 
         <ImageView
             android:id="@+id/imageView"
@@ -73,12 +73,16 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/btn_japones"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="COMEÇAR ÁUDIO" />
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_botao_audio_redondo"
+                    android:contentDescription="Tocar ou pausar conto japonês"
+                    android:padding="14dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/play" />
             </LinearLayout>
         </LinearLayout>
 
@@ -115,12 +119,16 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <Button
+                <ImageButton
                     android:id="@+id/btn_arabe"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="COMEÇAR ÁUDIO" />
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_botao_audio_redondo"
+                    android:contentDescription="Tocar ou pausar conto árabe"
+                    android:padding="14dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/play" />
             </LinearLayout>
         </LinearLayout>
 

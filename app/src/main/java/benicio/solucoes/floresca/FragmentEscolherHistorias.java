@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,7 +23,6 @@ public class FragmentEscolherHistorias extends Fragment {
     public FragmentEscolherHistorias() {
     }
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -32,7 +31,14 @@ public class FragmentEscolherHistorias extends Fragment {
 
         mainBinding = FragmentEscolherHistorias2Binding.inflate(inflater, container, false);
 
-        mainBinding.voltar.setOnClickListener(v -> {getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, new FragmentExercicio()).commit();
+        mainBinding.voltar.setOnClickListener(v -> {
+            if (getActivity() != null) {
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame_container, new FragmentExercicio())
+                        .commit();
+            }
         });
 
         mainBinding.btnJapones.setOnClickListener(v ->
@@ -56,10 +62,10 @@ public class FragmentEscolherHistorias extends Fragment {
     private void toggleSom(int som) {
         if (getActivity() == null) return;
 
-        // Se clicou no mesmo áudio que já está tocando, para
+        // Se clicou no mesmo áudio que já está tocando, pausa/para
         if (mediaPlayer != null && somAtual == som) {
-            pararSomAtual();
-            Toast.makeText(getActivity(), "Áudio parado!", Toast.LENGTH_SHORT).show();
+            pararSomAtualSemToast();
+            Toast.makeText(getActivity(), "Áudio pausado!", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -79,10 +85,24 @@ public class FragmentEscolherHistorias extends Fragment {
         }
 
         somAtual = som;
-        mediaPlayer.start();
         atualizarBotoes();
 
-        Toast.makeText(getActivity(), "Iniciando áudio...", Toast.LENGTH_SHORT).show();
+        try {
+            mediaPlayer.start();
+            Toast.makeText(getActivity(), "Iniciando áudio...", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            somAtual = -1;
+            atualizarBotoes();
+            Toast.makeText(getActivity(), "Erro ao reproduzir o áudio.", Toast.LENGTH_SHORT).show();
+
+            try {
+                mediaPlayer.release();
+            } catch (Exception ignored) {
+            }
+
+            mediaPlayer = null;
+            return;
+        }
 
         mediaPlayer.setOnCompletionListener(mp -> {
             pararSomAtualSemToast();
@@ -90,10 +110,6 @@ public class FragmentEscolherHistorias extends Fragment {
                 Toast.makeText(getActivity(), "Áudio finalizado.", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    private void pararSomAtual() {
-        pararSomAtualSemToast();
     }
 
     private void pararSomAtualSemToast() {
@@ -105,7 +121,11 @@ public class FragmentEscolherHistorias extends Fragment {
             } catch (Exception ignored) {
             }
 
-            mediaPlayer.release();
+            try {
+                mediaPlayer.release();
+            } catch (Exception ignored) {
+            }
+
             mediaPlayer = null;
         }
 
@@ -116,15 +136,17 @@ public class FragmentEscolherHistorias extends Fragment {
     private void atualizarBotoes() {
         if (mainBinding == null) return;
 
-        atualizarTextoBotao(mainBinding.btnJapones, R.raw.histjapo);
-        atualizarTextoBotao(mainBinding.btnArabe, R.raw.historiaarabe);
+        atualizarIconeBotao(mainBinding.btnJapones, R.raw.histjapo);
+        atualizarIconeBotao(mainBinding.btnArabe, R.raw.historiaarabe);
     }
 
-    private void atualizarTextoBotao(Button button, int som) {
+    private void atualizarIconeBotao(ImageButton button, int som) {
+        if (button == null) return;
+
         if (somAtual == som && mediaPlayer != null) {
-            button.setText("PARAR ÁUDIO");
+            button.setImageResource(R.drawable.pausa);
         } else {
-            button.setText("COMEÇAR ÁUDIO");
+            button.setImageResource(R.drawable.play);
         }
     }
 

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -30,12 +30,16 @@ public class FragmentEscolherTempoRelaxamento extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-
-
         mainBinding = FragmentEscolherTempoRelaxamentoBinding.inflate(inflater, container, false);
 
         mainBinding.voltar1.setOnClickListener(v -> {
-            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, new FragmentExercicioRelaxamento()).commit();
+            if (getActivity() != null) {
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame_container, new FragmentExercicioRelaxamento())
+                        .commit();
+            }
         });
 
         mainBinding.btnAutoconfianca.setOnClickListener(v ->
@@ -76,8 +80,8 @@ public class FragmentEscolherTempoRelaxamento extends Fragment {
 
         // se clicou no mesmo som que já está tocando, para
         if (mediaPlayer != null && somAtual == som) {
-            pararSomAtual();
-            Toast.makeText(getActivity(), "Áudio parado!", Toast.LENGTH_SHORT).show();
+            pararSomAtualSemToast();
+            Toast.makeText(getActivity(), "Áudio pausado!", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -97,10 +101,23 @@ public class FragmentEscolherTempoRelaxamento extends Fragment {
         }
 
         somAtual = som;
-        mediaPlayer.start();
         atualizarBotoes();
 
-        Toast.makeText(getActivity(), "Iniciando áudio...", Toast.LENGTH_SHORT).show();
+        try {
+            mediaPlayer.start();
+            Toast.makeText(getActivity(), "Iniciando áudio...", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            somAtual = -1;
+            atualizarBotoes();
+            Toast.makeText(getActivity(), "Erro ao reproduzir o áudio.", Toast.LENGTH_SHORT).show();
+
+            try {
+                mediaPlayer.release();
+            } catch (Exception ignored) {
+            }
+            mediaPlayer = null;
+            return;
+        }
 
         mediaPlayer.setOnCompletionListener(mp -> {
             pararSomAtualSemToast();
@@ -108,10 +125,6 @@ public class FragmentEscolherTempoRelaxamento extends Fragment {
                 Toast.makeText(getActivity(), "Áudio finalizado.", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    private void pararSomAtual() {
-        pararSomAtualSemToast();
     }
 
     private void pararSomAtualSemToast() {
@@ -123,7 +136,11 @@ public class FragmentEscolherTempoRelaxamento extends Fragment {
             } catch (Exception ignored) {
             }
 
-            mediaPlayer.release();
+            try {
+                mediaPlayer.release();
+            } catch (Exception ignored) {
+            }
+
             mediaPlayer = null;
         }
 
@@ -134,17 +151,19 @@ public class FragmentEscolherTempoRelaxamento extends Fragment {
     private void atualizarBotoes() {
         if (mainBinding == null) return;
 
-        atualizarTextoBotao(mainBinding.btnAutoconfianca, R.raw.dez_aceitacao_autoconfianca);
-        atualizarTextoBotao(mainBinding.btnAutoestima, R.raw.cinco_autoestima_amor);
-        atualizarTextoBotao(mainBinding.btnLivre, R.raw.dez_livre_ansiedade);
-        atualizarTextoBotao(mainBinding.btnCura, R.raw.cinco_cura_em_voce);
+        atualizarIconeBotao(mainBinding.btnAutoconfianca, R.raw.dez_aceitacao_autoconfianca);
+        atualizarIconeBotao(mainBinding.btnAutoestima, R.raw.cinco_autoestima_amor);
+        atualizarIconeBotao(mainBinding.btnLivre, R.raw.dez_livre_ansiedade);
+        atualizarIconeBotao(mainBinding.btnCura, R.raw.cinco_cura_em_voce);
     }
 
-    private void atualizarTextoBotao(Button button, int som) {
+    private void atualizarIconeBotao(ImageButton button, int som) {
+        if (button == null) return;
+
         if (somAtual == som && mediaPlayer != null) {
-            button.setText("PARAR ÁUDIO");
+            button.setImageResource(R.drawable.pausa);
         } else {
-            button.setText("COMEÇAR ÁUDIO");
+            button.setImageResource(R.drawable.play);
         }
     }
 
