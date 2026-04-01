@@ -17,6 +17,15 @@
         android:padding="8dp"
         tools:context=".IndexActivity">
 
+        <ImageButton
+            android:id="@+id/voltar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/rounded_back"
+            android:scaleType="fitCenter"
+            android:tint="#050505"
+            app:srcCompat="@drawable/voltaricon" />
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"

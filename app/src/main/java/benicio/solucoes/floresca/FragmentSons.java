@@ -31,6 +31,9 @@ public class FragmentSons extends Fragment {
         mainBinding.iniciar.setOnClickListener(v ->
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentSons).commit());
 
+        mainBinding.voltar.setOnClickListener(v -> {getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, new FragmentExercicio()).commit();
+        });
+
         return mainBinding.getRoot();
     }
 }

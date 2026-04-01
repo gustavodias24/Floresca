@@ -28,6 +28,12 @@ public class FragmentExercicioRelaxamento extends Fragment {
         mainBinding.iniciar.setOnClickListener(v -> getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, fragmentRelaxamento).commit())
         ;
 
+        mainBinding.voltar.setOnClickListener(v -> {
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, new FragmentExercicio()).commit();
+        });
+
+
+
         return mainBinding.getRoot();
     }
 }

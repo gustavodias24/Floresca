@@ -37,6 +37,9 @@ public class FragmentCompreenda extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         mainBinding = FragmentCompreendaSeBinding.inflate(getLayoutInflater());
 
+        mainBinding.voltar.setOnClickListener(v -> {getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, new FragmentExercicio()).commit();
+        });
+
         mainBinding.titulo1.setOnClickListener(v -> exibirTexto(1));
         mainBinding.titulo2.setOnClickListener(v -> exibirTexto(2));
         mainBinding.titulo3.setOnClickListener(v -> exibirTexto(3));

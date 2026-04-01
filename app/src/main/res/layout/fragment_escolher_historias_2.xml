@@ -17,6 +17,16 @@
         android:padding="8dp"
         tools:context=".IndexActivity">
 
+        <ImageButton
+            android:id="@+id/voltar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/rounded_back"
+            android:scaleType="fitCenter"
+            android:tint="#050505"
+            app:srcCompat="@drawable/voltaricon" />
+
+
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
@@ -35,7 +45,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/back_round_green"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="8dp">
 
             <ImageButton
                 android:id="@+id/imageButton"
@@ -46,16 +57,29 @@
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/japones" />
 
-            <TextView
-                android:id="@+id/japones"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="Conto Japonês - 8 min"
-                android:textColor="@color/roxo_escuro"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/japones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Conto Japonês - 8 min"
+                    android:textColor="@color/roxo_escuro"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_japones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="COMEÇAR ÁUDIO" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -63,9 +87,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:background="@drawable/back_round_green"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="8dp">
 
             <ImageButton
+                android:id="@+id/imageButton2"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_margin="8dp"
@@ -73,16 +99,29 @@
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/arabe" />
 
-            <TextView
-                android:id="@+id/arabe"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="Conto árabe - 6 min"
-                android:textColor="@color/roxo_escuro"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/arabe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Conto árabe - 6 min"
+                    android:textColor="@color/roxo_escuro"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_arabe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="COMEÇAR ÁUDIO" />
+            </LinearLayout>
         </LinearLayout>
 
         <TextView
@@ -90,7 +129,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:text="Fonte: Lázaro Ramon" />
+            android:text="Fonte: Lázaro Ramon" />
 
     </LinearLayout>
 </ScrollView>
